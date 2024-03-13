@@ -1,4 +1,9 @@
 #!/bin/bash
+
+$a="a"
+
+while [ $a = $a ]
+do
 echo ""
 echo "-- Single file date changer --"
 echo ""
@@ -15,9 +20,8 @@ SetFile -d "${date:0:2}/${date:2:2}/${date:4:2} 00:00:00" "$file"
 
 read -p "Do you want to change another file? [Y/n]: " another
 
-if [ $another == 'n' ]
-then
-  exit
-else
-  ./changeSingleFile.command
+if [ $another = 'n' ]
+then exit
 fi
+
+done
